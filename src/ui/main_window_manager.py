@@ -1,11 +1,17 @@
 # coding=utf-8
 
 import sys
+# Threads can be used to keep a progress bar active while a function is running.
 from multiprocessing.pool import ThreadPool
 
+# Import PyQT5 widgets.
 import PyQt5.QtWidgets as Qt
 from PyQt5 import QtCore, QtWidgets
+
+# Impoort custom pop-up.
 from src.util.pop_message import PopMessage
+
+# Import the main GUI.
 from src.ui.main_window import Ui_MainWindow
 
 pool = ThreadPool(processes=4)
@@ -30,11 +36,6 @@ class MainOveride(Qt.QMainWindow):
 
 ''' R E V I S I O N '''
 revision = '1.0'
-
-
-# = = = = D I A G -- F L A G = = = = =
-diag_flag = True
-# =====================================
 
 
 class MainWindow(Ui_MainWindow, MainOveride):
