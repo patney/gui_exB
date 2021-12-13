@@ -1,6 +1,10 @@
 import PyQt5.QtWidgets as Qt
-
+"""
+Example of showing a custom pop up message when called.
+There is a QMessage box in PyQt5.
+"""
 class PopMessage:
+    # Inherent the Parent GUI which gives  access to all elements.
     def __init__(self, parent=None):
         super().__init__()
         self.main = parent
@@ -20,4 +24,5 @@ class PopMessage:
                 'warn': msg_box.warning,
                 'ques': msg_box.question}[level]
         user_response = mbox(self.main, win_title, pop_msg, box_bttns)
+
         return {16384: True, 65536: False}.get(user_response, None)
